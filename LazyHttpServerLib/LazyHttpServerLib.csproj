@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>0.1.0</Version>
+    <PackageId>LazyHttpServerLib</PackageId>
+    <Title>LazyHttpServerLib</Title>
+    <Authors>mkaraki</Authors>
+    <PackageProjectUrl>https://github.com/mkaraki/LazyHttpServerLib</PackageProjectUrl>
+    <License>MIT</License>
+    <RepositoryUrl>https://github.com/mkaraki/LazyHttpServerLib</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
