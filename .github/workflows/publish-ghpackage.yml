@@ -33,7 +33,14 @@ jobs:
       run: dotnet build --no-restore --configuration Release LazyHttpServerLib/LazyHttpServerLib.csproj
 
     - name: Pack
-      run: dotnet pack --no-build --no-restore --configuration Release --version-suffix "build${{ github.run_number }}" LazyHttpServerLib/LazyHttpServerLib.csproj
+      run: dotnet pack --no-build --no-restore --configuration Release --version-suffix "build${{ github.run_number }}" -o artifact/ LazyHttpServerLib/LazyHttpServerLib.csproj
       
     - name: Publish
-      run: dotnet nuget push "LazyHttpServerLib/bin/Release/*.nupkg" --source "github"
+      run: dotnet nuget push "artifact/*.nupkg" --source "github"
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: LazyHttpServerLib
+        path: artifact/
+      
