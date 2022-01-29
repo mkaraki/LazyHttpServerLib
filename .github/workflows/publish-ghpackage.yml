@@ -34,13 +34,12 @@ jobs:
 
     - name: Pack
       run: dotnet pack --no-build --no-restore --configuration Release --version-suffix "build${{ github.run_number }}" -o artifact/ LazyHttpServerLib/LazyHttpServerLib.csproj
-      
-    - name: Publish
-      run: dotnet nuget push "LazyHttpServerLib/artifact/*.nupkg" --source "github"
-      
+    
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
         name: LazyHttpServerLib
-        path: LazyHttpServerLib/artifact/
-      
+        path: artifact/
+    
+    - name: Publish
+      run: dotnet nuget push "artifact/*.nupkg" --source "github"
