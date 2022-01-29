@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyHttpServerLib", "LazyHttpServerLib\LazyHttpServerLib.csproj", "{765FE1D1-53A6-41CA-9E9B-56E0602771C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebServer", "SampleWebServer\SampleWebServer.csproj", "{555DED33-A961-4FC6-9546-897BDE0D4618}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{765FE1D1-53A6-41CA-9E9B-56E0602771C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765FE1D1-53A6-41CA-9E9B-56E0602771C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765FE1D1-53A6-41CA-9E9B-56E0602771C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765FE1D1-53A6-41CA-9E9B-56E0602771C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555DED33-A961-4FC6-9546-897BDE0D4618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555DED33-A961-4FC6-9546-897BDE0D4618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555DED33-A961-4FC6-9546-897BDE0D4618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555DED33-A961-4FC6-9546-897BDE0D4618}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CAD7C56-87FF-4EFB-9FD9-3AFC767728A5}
+	EndGlobalSection
+EndGlobal
