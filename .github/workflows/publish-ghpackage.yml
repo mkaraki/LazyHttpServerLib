@@ -33,7 +33,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release LazyHttpServerLib/LazyHttpServerLib.csproj
 
     - name: Pack
-      run: dotnet pack --no-build --no-restore --configuration Release --version-suffix ${{ github.run_number }} LazyHttpServerLib/LazyHttpServerLib.csproj
+      run: dotnet pack --no-build --no-restore --configuration Release --version-suffix "build${{ github.run_number }}" LazyHttpServerLib/LazyHttpServerLib.csproj
       
     - name: Publish
       run: dotnet nuget push "LazyHttpServerLib/bin/Release/*.nupkg" --source "github"
