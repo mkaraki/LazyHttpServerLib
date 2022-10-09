@@ -8,11 +8,16 @@ namespace LazyHttpServerLib
 
         public HttpServer(IEnumerable<string> prefixes)
         {
+            if (!HttpListener.IsSupported)
+                throw new NotSupportedException("This platform doesn't support HttpListener class.");
+
             listener = new();
          
             foreach(string prefix in prefixes)
                 listener.Prefixes.Add(prefix);
         }
+
+        public bool IsListening { get => listener.IsListening; }
 
         public void Start()
         {
@@ -20,10 +25,35 @@ namespace LazyHttpServerLib
             StartWait();
         }
 
-        public void Stop()
+        /// <summary>
+        /// Call HttpListener.Close()
+        /// See: https://learn.microsoft.com/ja-jp/dotnet/api/system.net.httplistener.close
+        /// </summary>
+        public void Close()
         {
             listener.Close();
         }
+
+        /// <summary>
+        /// Call HttpListener.Abort()
+        /// See: https://learn.microsoft.com/ja-jp/dotnet/api/system.net.httplistener.abort
+        /// </summary>
+        public void Abort()
+        {
+            listener.Abort();
+        }
+
+        /// <summary>
+        /// Call HttpListener.Stop()
+        /// See: https://learn.microsoft.com/ja-jp/dotnet/api/system.net.httplistener.stop
+        /// </summary>
+        public void Stop()
+        {
+            listener.Stop();
+        }
+
+        public void Pause()
+            => Stop();
 
         public event EventHandler<IncomingHttpRequestEventArgs>? IncomingHttpRequest;
 

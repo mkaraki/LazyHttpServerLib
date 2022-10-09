@@ -46,7 +46,7 @@ while (true)
 {
     if (Console.ReadLine() == "exit")
     {
-        httpServer.Stop();
+        httpServer.Close();
         break;
     }
 }
