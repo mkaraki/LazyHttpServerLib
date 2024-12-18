@@ -8,7 +8,7 @@ namespace LazyHttpServerLib
 
         public HttpServer(IEnumerable<string> prefixes)
         {
-            if (!HttpListener.IsSupported)
+            if (!IsSupported)
                 throw new NotSupportedException("This platform doesn't support HttpListener class.");
 
             listener = new();
@@ -16,6 +16,8 @@ namespace LazyHttpServerLib
             foreach(string prefix in prefixes)
                 listener.Prefixes.Add(prefix);
         }
+
+        public static bool IsSupported => HttpListener.IsSupported;
 
         public bool IsListening { get => listener.IsListening; }
 
